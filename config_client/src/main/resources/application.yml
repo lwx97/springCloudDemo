@@ -1,0 +1,18 @@
+server:
+  port: 8500
+
+spring:
+  application:
+    name: config_client
+
+# actuator监控相关的配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info
+  endpoint:
+    health:
+      show-details: always
+  server: # 指定actuator端口。如果不指定则与系统服务端口一致。建议修改
+    port: 10001
