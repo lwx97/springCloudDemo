@@ -8,5 +8,12 @@ spring:
       enabled: true
       # 启动什么环境的配置
       profile: dev
-      # 配置服务的URL
-      uri: http://127.0.0.1:9999
+      # 配置服务的URL 【如果使用eureka，则不再写URL，使用下面的discovery的形式】
+      # uri: http://127.0.0.1:9999
+      discovery:
+        enabled: true
+        service-id: config_server
+eureka:
+  client:
+    service-url:
+      defaultZone : http://127.0.0.1:8080/eureka/
